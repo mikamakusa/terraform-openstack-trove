@@ -2,6 +2,7 @@ resource "openstack_db_instance_v1" "this" {
   for_each         = { for instance in var.instances : instance.name => instance }
   name             = each.value.name
   size             = each.value.size
+  volume_type      = each.value.volume_type
   region           = each.value.region
   flavor_id        = each.value.flavor_id
   configuration_id = each.value.configuration_id

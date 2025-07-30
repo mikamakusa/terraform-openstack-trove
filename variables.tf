@@ -2,6 +2,7 @@ variable "instances" {
   type = list(object({
     name              = string
     size              = number
+    volume_type       = string
     region            = optional(string)
     flavor_id         = optional(string)
     configuration_id  = optional(string)
